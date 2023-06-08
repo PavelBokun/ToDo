@@ -11,6 +11,7 @@ import Container from "@mui/material/Container/Container";
 import Grid from "@mui/material/Grid/Grid";
 import Paper from "@mui/material/Paper/Paper";
 import { Padding } from "@mui/icons-material";
+import App2 from "./level/l2";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -186,6 +187,9 @@ function App() {
           })}
         </Grid>
       </Container>
+      <div>
+        <App2 />
+      </div>
     </div>
   );
 }
