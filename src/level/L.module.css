@@ -1,0 +1,63 @@
+.total{
+    align-items: center;
+    font-size: 25px;
+    font-weight:bold;
+    color:rgb(37, 66, 232);
+    padding-right: 10px;
+}
+.red{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight:bold;
+    color:rgb(222, 21, 21);
+    margin: auto;
+}
+input{
+    background-color: rgb(43, 171, 226);
+    border: 5px solid black;
+    border-radius: 5px;
+}
+input:active{
+    /* background-color: rgb(43, 171, 226); */
+    border: 5px solid rgb(211, 194, 118);
+    border-radius: 5px;   
+}
+.button{
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 5px solid black;
+    background-color: aqua;
+    cursor: pointer;
+
+}
+.button:active{
+    background-color: rgb(228, 149, 38);
+}
+button:hover{
+    background-color: aquamarine;
+    border-color: aqua;
+}
+.manual {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(63, 154, 125);
+    border: 5px solid black;
+    border-radius: 5px;
+    width: 1000px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.all {
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: rgb(197, 218, 218);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.Button {
+    margin-left: 5px;
+}
