@@ -2,20 +2,28 @@ import React, { useState } from 'react';
 import s from "./L.module.css";
 import Button from '@mui/material/Button/Button';
 import TextField from '@mui/material/TextField/TextField';
+// import React from 'react';
 export type Props = {
-  color:string
-    limit: number
+ 
+    limit: number;
+    onLimitChange: (limit: number) => void;
   }
 
-function ProgressBar({ limit,color }: Props) {
-    const [total,setTotal]=useState(0)
-    const [rez,setRez]=useState(0)
+function ProgressBar({ limit, onLimitChange}: Props) {
+  const [total, setTotal] = useState<number>(0);
+  const [rez, setRez] = useState<number>(0);
+   const[limitnew,setLimit]=useState<number>(0)
     const persent='%'
     const onHandlerTotal = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newTotal = Number(event.target.value);
         let percentage = (newTotal / limit * 100).toFixed(2);
         setTotal(newTotal);
         setRez(parseFloat(percentage))
+    }
+    const onHandlerLimit=(event: React.ChangeEvent<HTMLInputElement>)=>{
+           const newLimit=Number(event.currentTarget.value)
+      setLimit(newLimit);
+      onLimitChange(newLimit);
     }
 
     const onClear=()=>{
@@ -48,12 +56,16 @@ function ProgressBar({ limit,color }: Props) {
       <div style={style}></div>
       <div className={s.manual}>
       {/* <div className={s.total} >Total: {total}</div> */}
-      <div className={s.total} ><p>В ведите сумму</p></div>
+      <div className={s.total} ><p>Введите сумму</p></div>
       <TextField id="outlined-basic"  variant="outlined" value={total} onChange={onHandlerTotal} />
     {/* <input type="text" value={total}  placeholder='в ведите число' onChange={onHandlerTotal} /> */}
     <Button className={s.Button} variant="contained" size="small" color="success" onClick={onClear}>Clean</Button>
     {/* <button className={s.button} onClick={onClear}>Clean</button> */}
-    
+    {/* <TextField id="outlined-basic"  variant="outlined" value={limitnew} onChange={onHandlerLimit} />
+         */}
+         <div className={s.total}><p>Введите лимит</p></div>
+        <TextField id="outlined-basic" variant="outlined" value={limitnew} onChange={onHandlerLimit} />
+        <Button className={s.Button} variant="contained" size="small" color="success" >Установить сумму</Button>
       </div>
       
     </div>
